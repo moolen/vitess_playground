@@ -91,8 +91,7 @@ $ docker-compose exec vttablet3 bash -c "ls -la /vt/vtdataroot/backups/test_keys
 
 ## lessons learned
 
-Vitess uses `--binlog-format=statement` see [here](https://vitess.io/user-guide/vitess-replication/). We use `ROW` format.
-
+* Vitess uses `--binlog-format=statement` see [here](https://vitess.io/user-guide/vitess-replication/)
 * Vitess can *NOT* create a backup from a master tablet.
 * Vitess Backups require to stop the `mysqld` process!
 * Vitess uses a different directory layout for the mysql data. See `cat /vt/vtdataroot/vt_000000000${TABLET_ID}/my.cnf` for reference. Especially `tablespaces, innodb and bin/relay logs` are in a different location
